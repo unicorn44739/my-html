@@ -7,11 +7,27 @@
     <style>
         body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; }
         header { background: #333; color: white; padding: 20px; font-size: 24px; }
-        .gallery { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
-        .gallery div { margin: 10px; text-align: center; width: 220px; }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px; /* 控制間距 */
+            max-width: 1150px; /* 限制最大寬度 (220px * 5 + 10px * 4) */
+            margin: 0 auto; /* 讓整個 gallery 置中 */
+        }
+
+        .gallery div {
+            width: 220px; /* 每個作品的寬度 */
+            text-align: center;
+        }
+
         .gallery img, .gallery video { width: 200px; height: 200px; border-radius: 10px; display: block; object-fit: cover; }
         .gallery a { display: block; margin-top: 5px; color: blue; text-decoration: none; }
         footer { background: #333; color: white; padding: 10px; margin-top: 20px; }
+        .clear {
+            clear: both;
+        }
+
     </style>
 </head>
 <body>
@@ -37,6 +53,27 @@
             <img src="NipiFlag.png" alt="圖片作品4">
             <a href="process4.html">創作過程/Creation Process</a>
         </div>
+
+        <div><img src="GIF/best clown.gif"></div>
+        <div><img src="GIF/尼是山羊.gif"></div>
+        <div><img src="GIF/尼牆.gif"></div>
+        <div><img src="GIF/尼真棒.gif"></div>
+        <div><img src="GIF/可愛.gif"></div>
+        <div><img src="GIF/蝦.gif"></div>
+        <div><img src="GIF/蛤.gif"></div>
+        <div><img src="GIF/是又怎樣.gif"></div>
+        <div><img src="GIF/尼皮.gif"></div>
+        <div><img src="GIF/WordShake.gif"></div>
+        <div><img src="GIF/hitthegoat.gif"></div>
+        <div><img src="GIF/NipiWhere.gif"></div>
+        <div><img src="GIF/NipiWall.gif"></div>
+        <div><img src="GIF/welcome.gif"></div>
+        <div><img src="GIF/NipiFan.gif"></div>
+        <div><img src="GIF/nipiLove.gif"></div>
+        <div><img src="GIF/nipishock.gif"></div>
+        <div><img src="GIF/nipismile1.gif"></div>
+        <div><img src="GIF/nipismile2.gif"></div>
+        <div><img src="GIF/我要選布.gif"></div>
         <!-- <div>
             <video controls>
                 <source src="video2.mp4" type="video/mp4">
