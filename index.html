@@ -5,25 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的作品集</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; }
-        header { background: #333; color: white; padding: 20px; font-size: 24px; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            width: 100%;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            max-width: 1200px;
+            margin-top: 20px;
+        }
+
+        .text-content {
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .card-container {
+            perspective: 1000px;
+            width: 400px;
+            height: 300px;
+            margin: 0 20px;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: spin 3s infinite linear;
+        }
+
+        .card div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .front {
+            background-image: url('front.png');
+        }
+
+        .back {
+            background-image: url('back.png');
+            transform: rotateY(180deg);
+        }
+
+        @keyframes spin {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
         .gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px; /* 控制間距 */
-            max-width: 1150px; /* 限制最大寬度 (220px * 5 + 10px * 4) */
-            margin: 0 auto; /* 讓整個 gallery 置中 */
+            gap: 10px;
+            max-width: 1150px;
+            margin: 30px auto;
         }
 
         .gallery div {
-            width: 220px; /* 每個作品的寬度 */
+            width: 220px;
             text-align: center;
         }
 
-        .gallery img, .gallery video { width: 200px; height: 200px; border-radius: 10px; display: block; object-fit: cover; }
-        .gallery a { display: block; margin-top: 5px; color: blue; text-decoration: none; }
-        footer { background: #333; color: white; padding: 10px; margin-top: 20px; }
+        .gallery img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .gallery a {
+            display: block;
+            margin-top: 5px;
+            color: blue;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            width: 100%;
+        }
         .clear {
             clear: both;
         }
@@ -32,10 +127,31 @@
 </head>
 <body>
     <header>歌岸似聲作品集</header>
-    <p>嗨，大家好！我是尼皮（Nipi）的忠實粉絲，也是個熱愛創作的迷因愛好者。</p>
-    <p>平時喜歡製作與尼皮相關的搞笑迷因和影片，特別是%控、磚頭等經典梗，讓大家一起開心歡樂！</p>
-    <p>除了迷因創作，我也喜歡玩遊戲、看動畫、拍照，偶爾還會彈彈吉他放鬆一下。</p>
-    <p>希望能用我的創作帶給大家更多笑聲，讓生活充滿樂趣！</p>
+    <div class="content">
+        <!-- 左側旋轉卡片 -->
+        <div class="card-container">
+            <div class="card">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+
+        <!-- 中間的介紹文字 -->
+        <div class="text-content">
+            <p>嗨，大家好！我是尼皮（Nipi）的忠實粉絲，也是個熱愛創作的迷因愛好者。</p>
+            <p>平時喜歡製作與尼皮相關的搞笑迷因和影片，特別是%控、磚頭等經典梗，讓大家一起開心歡樂！</p>
+            <p>除了迷因創作，我也喜歡玩遊戲、看動畫、拍照，偶爾還會彈彈吉他放鬆一下。</p>
+            <p>希望能用我的創作帶給大家更多笑聲，讓生活充滿樂趣！</p>
+        </div>
+
+        <!-- 右側旋轉卡片 -->
+        <div class="card-container">
+            <div class="card">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+    </div>
     <div class="gallery">
         <div>
             <img src="NipiLick.gif" alt="圖片作品1">
